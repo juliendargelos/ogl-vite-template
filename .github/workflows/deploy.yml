@@ -1,0 +1,82 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: read
+
+    steps:
+      - name: Check GitHub Pages
+        id: github_pages
+        uses: AlexAegis/check-github-pages@v1
+
+      - name: Cancel
+        if: steps.github_pages.outputs.is_enabled != 'true'
+        run: |
+          echo "::error::\
+          GitHub Pages is not enabled. Select \"GitHub Actions\" as the \
+          source for GitHub Pages in your repository settings: \
+          ${{github.server_url}}/${{ github.repository }}/settings/pages\
+          "
+          exit 1
+
+  build:
+    name: Build
+    needs: setup
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+          cache: pnpm
+
+      - name: Setup corepack
+        run: |
+          npm install -g corepack@^0.31.0
+          corepack enable
+          corepack install
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build app
+        run: pnpm build --base=${{ github.event.repository.name }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
