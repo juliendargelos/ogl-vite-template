@@ -4,7 +4,7 @@
   OGL / Vite template
 </h3>
 
-[![Use this template](https://gist.githubusercontent.com/juliendargelos/35cfc34447d88883afab621ccaca7021/raw/e10f7581e4218e5b6b68bf300b975940c4c3adc6/github-use-this-template.svg)](https://github.com/new?template_name=ogl-vite-starter&template_owner=juliendargelos)
+[![Use this template](https://gist.githubusercontent.com/juliendargelos/35cfc34447d88883afab621ccaca7021/raw/e10f7581e4218e5b6b68bf300b975940c4c3adc6/github-use-this-template.svg)](https://github.com/new?template_name=ogl-vite-template&template_owner=juliendargelos)
 
 <h2></h2>
 
