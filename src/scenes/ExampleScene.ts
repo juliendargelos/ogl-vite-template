@@ -13,7 +13,7 @@ import type {
   Lifecycle
 } from '~/core'
 
-export interface MainSceneParamaters {
+export interface MainSceneOptions {
   clock: Clock
   camera: Camera
   viewport: Viewport
@@ -29,7 +29,7 @@ export class ExampleScene extends Transform implements Lifecycle {
     clock,
     camera,
     viewport
-  }: MainSceneParamaters) {
+  }: MainSceneOptions) {
     super()
 
     this.clock = clock

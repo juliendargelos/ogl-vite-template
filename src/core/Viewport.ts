@@ -1,7 +1,7 @@
 import { Vec2 } from 'ogl'
 import { Lifecycle } from './Lifecycle'
 
-export interface ViewportParameters {
+export interface ViewportOptions {
   element: Element
   maximumDpr?: number
   resize?: () => void
@@ -25,7 +25,7 @@ export class Viewport implements Lifecycle {
     element,
     resize,
     maximumDpr = Infinity
-  }: ViewportParameters) {
+  }: ViewportOptions) {
     this.element = element
     this.maximumDpr = maximumDpr
     this.resize = resize || (() => {})

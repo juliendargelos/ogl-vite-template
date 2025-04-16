@@ -4,7 +4,7 @@ import type { GUI } from '~/GUI'
 import { Composer } from '~/Composer'
 import { ExampleScene } from '~/scenes/ExampleScene'
 
-export interface AppParameters {
+export interface AppOptions {
   canvas?: HTMLCanvasElement
   debug?: boolean
 }
@@ -24,7 +24,7 @@ export class App implements Lifecycle {
   public constructor({
     canvas,
     debug = false
-  }: AppParameters = {}) {
+  }: AppOptions = {}) {
     this.debug = debug
     this.clock = new Clock()
 
@@ -150,10 +150,10 @@ export class App implements Lifecycle {
   }
 
   /**
-   * Create, load and start an app instance with the given parameters
+   * Create, load and start an app instance with the given options
    */
-  public static async mount(parameters: AppParameters): Promise<App> {
-    const app = new this(parameters)
+  public static async mount(options: AppOptions): Promise<App> {
+    const app = new this(options)
     await app.load()
     app.start()
 

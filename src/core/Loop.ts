@@ -1,6 +1,6 @@
 import { Lifecycle } from './Lifecycle'
 
-export interface LoopParameters {
+export interface LoopOptions {
   tick?: () => void
 }
 
@@ -10,7 +10,7 @@ export class Loop implements Lifecycle {
 
   public constructor({
     tick
-  }: LoopParameters = {}) {
+  }: LoopOptions = {}) {
     this.tick = tick || (() => {})
   }
 

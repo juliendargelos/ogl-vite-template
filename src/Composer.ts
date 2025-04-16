@@ -11,7 +11,7 @@ import type {
   Lifecycle
 } from '~/core'
 
-export interface ComposerParameters  {
+export interface ComposerOptions  {
   viewport: Viewport
   clock: Clock
   scene?: Transform
@@ -36,7 +36,7 @@ export class Composer implements Lifecycle {
     clock,
     scene,
     camera
-  }: ComposerParameters) {
+  }: ComposerOptions) {
     this.gl = gl
     this.clock = clock
     this.viewport = viewport
