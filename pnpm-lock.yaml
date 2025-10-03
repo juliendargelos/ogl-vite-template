@@ -22,20 +22,20 @@ importers:
         version: 4.0.5
     devDependencies:
       '@types/node':
-        specifier: ^22.13.1
-        version: 22.13.1
+        specifier: ^24.6.2
+        version: 24.6.2
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
       vite:
         specifier: ^6.1.0
-        version: 6.1.0(@types/node@22.13.1)
+        version: 6.1.0(@types/node@24.6.2)
       vite-plugin-glsl:
         specifier: ^1.3.1
-        version: 1.3.1(rollup@4.34.4)(vite@6.1.0(@types/node@22.13.1))
+        version: 1.3.1(rollup@4.34.4)(vite@6.1.0(@types/node@24.6.2))
       vite-tsconfig-paths:
         specifier: ^5.1.4
-        version: 5.1.4(typescript@5.7.3)(vite@6.1.0(@types/node@22.13.1))
+        version: 5.1.4(typescript@5.7.3)(vite@6.1.0(@types/node@24.6.2))
 
 packages:
 
@@ -304,8 +304,8 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
-  '@types/node@22.13.1':
-    resolution: {integrity: sha512-jK8uzQlrvXqEU91UxiK5J7pKHyzgnI1Qnl0QDHIgVGuolJhRb9EEl28Cj9b3rGR8B2lhFCtvIm5os8lFnO/1Ew==}
+  '@types/node@24.6.2':
+    resolution: {integrity: sha512-d2L25Y4j+W3ZlNAeMKcy7yDsK425ibcAOO2t7aPTz6gNMH0z2GThtwENCDc0d/Pw9wgyRqE5Px1wkV7naz8ang==}
 
   debug@4.4.0:
     resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
@@ -381,8 +381,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@6.20.0:
-    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+  undici-types@7.13.0:
+    resolution: {integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==}
 
   vite-plugin-glsl@1.3.1:
     resolution: {integrity: sha512-iClII8Idb9X0m6nS0YI2cWWXbBuT5EKKw5kXSAuRu4RJsNe4oypxKXE7jx0XMoyqij2s8WL0ZLfou801mpkREg==}
@@ -588,9 +588,9 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
-  '@types/node@22.13.1':
+  '@types/node@24.6.2':
     dependencies:
-      undici-types: 6.20.0
+      undici-types: 7.13.0
 
   debug@4.4.0:
     dependencies:
@@ -682,31 +682,31 @@ snapshots:
 
   typescript@5.7.3: {}
 
-  undici-types@6.20.0: {}
+  undici-types@7.13.0: {}
 
-  vite-plugin-glsl@1.3.1(rollup@4.34.4)(vite@6.1.0(@types/node@22.13.1)):
+  vite-plugin-glsl@1.3.1(rollup@4.34.4)(vite@6.1.0(@types/node@24.6.2)):
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.34.4)
-      vite: 6.1.0(@types/node@22.13.1)
+      vite: 6.1.0(@types/node@24.6.2)
     transitivePeerDependencies:
       - rollup
 
-  vite-tsconfig-paths@5.1.4(typescript@5.7.3)(vite@6.1.0(@types/node@22.13.1)):
+  vite-tsconfig-paths@5.1.4(typescript@5.7.3)(vite@6.1.0(@types/node@24.6.2)):
     dependencies:
       debug: 4.4.0
       globrex: 0.1.2
       tsconfck: 3.1.5(typescript@5.7.3)
     optionalDependencies:
-      vite: 6.1.0(@types/node@22.13.1)
+      vite: 6.1.0(@types/node@24.6.2)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@6.1.0(@types/node@22.13.1):
+  vite@6.1.0(@types/node@24.6.2):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.5.1
       rollup: 4.34.4
     optionalDependencies:
-      '@types/node': 22.13.1
+      '@types/node': 24.6.2
       fsevents: 2.3.3
